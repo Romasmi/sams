@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Site;
 use App\Services\SiteAnalyser;
+use App\Jobs;
 
 class DashboardController extends Controller
 {
@@ -27,8 +28,13 @@ class DashboardController extends Controller
     {
         $sites = Site::all()->sortByDesc('id');
 
+        foreach ($sites as $site)
+        {
+            //Jobs\CheckSiteHttpCode::dispatch($site)->onConnection('database');
+        }
+
         return view('dashboard.main',
-            [
+        [
                 'title' => 'Список сайтов',
                 'sites' => $sites
             ]);

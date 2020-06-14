@@ -9,7 +9,7 @@ class SiteAnalyser
 {
     static public function getHttpError(Site $site)
     {
-        $response = Http::get($site->getUrl);
+        $response = Http::get($site->getUrl());
         event(new SiteHttpCodeChecked($site, $response->status()));
         return $response->status();
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSiteHttpCodesTable extends Migration
+class CreateSiteJobPeriodsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateSiteHttpCodesTable extends Migration
      */
     public function up()
     {
-        Schema::create('site_http_codes', function (Blueprint $table) {
+        Schema::create('site_job_periods', function (Blueprint $table) {
             $table->id();
-            $table->integer('http_code');
             $table->foreignId('site_id')->references('id')->on('sites');
-            $table->timestamps();
+            $table->string('job');
+            $table->string('period');
+            $table->index(['job','site_id']);
         });
     }
 
@@ -28,6 +29,6 @@ class CreateSiteHttpCodesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('site_http_codes');
+        Schema::dropIfExists('site_job_periods');
     }
 }

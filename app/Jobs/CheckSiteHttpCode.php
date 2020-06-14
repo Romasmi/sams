@@ -9,16 +9,18 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Services\SiteAnalyser;
 use App\Site;
+use Illuminate\Support\Facades\Log;
 
 class CheckSiteHttpCode implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    public const name = 'CheckSiteHttpCode';
     protected $site;
 
     /**
      * Create a new job instance.
      *
-     * @return void
+     * @param Site $site
      */
     public function __construct(Site $site)
     {
@@ -31,8 +33,10 @@ class CheckSiteHttpCode implements ShouldQueue
      * @param SiteAnalyser $siteAnalyser
      * @return void
      */
-    public function handle(SiteAnalyser $siteAnalyser)
+    public function handle()
     {
-        $siteAnalyser::getHttpError($this->site->id);
+        Log::info('Hello');
+
+        SiteAnalyser::getHttpError($this->site);
     }
 }
