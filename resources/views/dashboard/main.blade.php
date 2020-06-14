@@ -10,6 +10,7 @@
           <th>#</th>
           <th>Название</th>
           <th>Адрес</th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
@@ -18,7 +19,20 @@
           <tr>
             <td>{{$site->id}}</td>
             <td>{{$site->name}}</td>
-            <td>{{$site->protocol}}://{{$site->domain}}</td>
+            <td>
+              @if ($site->protocol == 'https')
+                <i class="fa fa-lock" aria-hidden="true"></i>
+              @endif
+              {{$site->domain}}
+            </td>
+            <td>
+              <a href="{{ route('editSite', ['id' => $site->id]) }}">
+                <i class="fa fa-edit fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="{{ route('editSite', ['id' => $site->id]) }}">
+                <i class="fa fa-archive fa-fw" aria-hidden="true"></i>
+              </a>
+            </td>
           </tr>
         @endforeach
         </tbody>

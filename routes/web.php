@@ -22,4 +22,7 @@ Auth::routes();
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/site/add', 'SiteController@addSite')->name('addSite');
-Route::post('/site/add', 'SiteController@create')->name('create');
+Route::post('/site/add', 'SiteController@create')->name('createSite');
+
+Route::get('/site/edit/{id}', 'SiteController@editSite')->name('editSite');
+Route::post('/site/edit/{id}', 'SiteController@update')->name('updateSite');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Site;
+use App\Services\SiteAnalyser;
 
 class DashboardController extends Controller
 {
@@ -22,9 +23,15 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(SiteAnalyser $siteAnalyser)
     {
         $sites = Site::all()->sortByDesc('id');
+
+/*        foreach ($sites as $site)
+        {
+            $url = "https://{$site->domain}";
+            $site->httpCode = $siteAnalyser->getHttpError($url);
+        }*/
 
         return view('dashboard.main',
             [

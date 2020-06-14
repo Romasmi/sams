@@ -19287,6 +19287,28 @@ __webpack_require__(/*! ./waves */ "./resources/js/waves.js");
 
 __webpack_require__(/*! ./dashboard */ "./resources/js/dashboard.js");
 
+$(function () {
+  $('.ajax-form').on('submit', function (event) {
+    event.preventDefault();
+
+    var _this = $(this);
+
+    var serverResponse = _this.find('.server-response');
+
+    $.ajax({
+      url: _this.attr('action'),
+      type: _this.attr('method'),
+      data: _this.serialize(),
+      success: function success(data) {
+        serverResponse.html(data.status).fadeIn();
+      },
+      error: function error(data) {
+        serverResponse.html('Ошибка при сохранении.').fadeIn();
+      }
+    });
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

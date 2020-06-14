@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('content')
-  <form method="POST" action="{{ route('addSite') }}">
+  <form method="POST" action="{{ route('createSite') }}">
     @csrf
 
     <div class="form-group">

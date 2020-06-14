@@ -40,6 +40,21 @@ class SiteController extends Controller
     }
 
     /**
+     * Show the editing site page.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function editSite($id)
+    {
+        $site = Site::find($id);
+        return view('dashboard.site.edit',
+            [
+                'title' => 'Редактировать сайт',
+                'site' => $site
+            ]);
+    }
+
+    /**
      * Add a new site instance.
      *
      * @param  array  $data
@@ -54,5 +69,24 @@ class SiteController extends Controller
         ]);
 
         return redirect()->route('dashboard');
+    }
+
+    /**
+     * Edit site instance.
+     *
+     * @param  array  $data
+     * @return \App\Site
+     */
+    protected function update(Request $request, $id)
+    {
+        $site = Site::find($id);
+
+        $site->name = $request->name;
+        $site->domain = $request->domain;
+        $site->protocol = $request->protocol;
+
+        $site->save();
+
+        return response()->json(['status' => 'Информация о сайте обновлена']);
     }
 }
