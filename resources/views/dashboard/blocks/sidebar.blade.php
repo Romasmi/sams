@@ -19,6 +19,7 @@
         <a href="dashboard.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                                          aria-hidden="true"></i>Уведомления</a>
       </li>
+{{--
       <li>
         <a href="profile.html" class="waves-effect"><i class="fa fa-user fa-fw"
                                                        aria-hidden="true"></i>Profile</a>
@@ -39,9 +40,17 @@
         <a href="404.html" class="waves-effect"><i class="fa fa-info-circle fa-fw"
                                                    aria-hidden="true"></i>Error 404</a>
       </li>
+--}}
     </ul>
     <div class="center p-20">
       <a href="{{ route('addSite') }}" class="btn btn-danger btn-block waves-effect waves-light">Добавить сайт</a>
+    </div>
+    <div>
+      <ul>
+        <li>Всего сайтов: 30</li>
+        <li>Всего поддоменов: 1175</li>
+        <li>Неудачных кодов: 3</li>
+      </ul>
     </div>
   </div>
 </div>

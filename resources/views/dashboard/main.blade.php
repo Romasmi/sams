@@ -1,8 +1,11 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <h3 class="box-title">Basic Table</h3>
-    <p class="text-muted">Add class <code>.table</code></p>
+    <p class="text-muted">
+      <i class="fa fa-lock" aria-hidden="true"></i> - защищённый SSL сертификатом сайт,
+      <i class="fa fa-edit" aria-hidden="true"></i> - редактировать,
+      <i class="fa fa-archive" aria-hidden="true"></i> - в архив
+    </p>
     <div class="table-responsive">
       <table class="table">
         <thead>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Site;
+use App\SiteJobPeriod;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -47,10 +48,18 @@ class SiteController extends Controller
     public function editSite($id)
     {
         $site = Site::find($id);
+        //$site->jobPeroids = SiteJobPeriod::where('site_id', $site->id);
+        $jobPeriods = [];
+        foreach ($site->jobPeriods as $period)
+        {
+            $jobPeriods[$period->job] = $period->period;
+        }
+
         return view('dashboard.site.edit',
             [
                 'title' => 'Редактировать сайт',
-                'site' => $site
+                'site' => $site,
+                'jobPeriods' => $jobPeriods
             ]);
     }
 
@@ -62,11 +71,20 @@ class SiteController extends Controller
      */
     protected function create(Request $request)
     {
-        Site::create([
+        $userId = Site::create([
             'name' => $request->name,
             'domain' =>  $request->domain,
             'protocol' =>  $request->protocol
-        ]);
+        ])->id;
+
+        foreach ($request->jobPeriod as $key => $value )
+        {
+            SiteJobPeriod::create([
+                'site_id' => $userId,
+                'job' =>  $key,
+                'period' =>  $value
+            ]);
+        }
 
         return redirect()->route('dashboard');
     }
@@ -84,6 +102,11 @@ class SiteController extends Controller
         $site->name = $request->name;
         $site->domain = $request->domain;
         $site->protocol = $request->protocol;
+
+        foreach ($request->jobPeriod as $key => $value )
+        {
+            SiteJobPeriod::where(['site_id' => $site->id, 'job' => $key])->update(['period' => $value]);
+        }
 
         $site->save();
 

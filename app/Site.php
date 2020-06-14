@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\SiteJobPeriod;
 
 class Site extends Model
 {
@@ -13,5 +14,10 @@ class Site extends Model
     public function getUrl()
     {
         return "{$this->protocol}://{$this->domain}";
+    }
+
+    public function jobPeriods()
+    {
+        return $this->hasMany('App\SiteJobPeriod');
     }
 }

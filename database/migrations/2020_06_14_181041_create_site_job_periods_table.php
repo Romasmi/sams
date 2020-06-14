@@ -19,6 +19,7 @@ class CreateSiteJobPeriodsTable extends Migration
             $table->string('job');
             $table->string('period');
             $table->index(['job','site_id']);
+            $table->timestamps();
         });
     }
 
