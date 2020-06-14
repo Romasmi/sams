@@ -27,12 +27,6 @@ class DashboardController extends Controller
     {
         $sites = Site::all()->sortByDesc('id');
 
-/*        foreach ($sites as $site)
-        {
-            $url = "https://{$site->domain}";
-            $site->httpCode = $siteAnalyser->getHttpError($url);
-        }*/
-
         return view('dashboard.main',
             [
                 'title' => 'Список сайтов',

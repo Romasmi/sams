@@ -2,12 +2,15 @@
 
 namespace App\Services;
 use Illuminate\Support\Facades\Http;
+use App\Events\SiteHttpCodeChecked;
+use App\Site;
 
 class SiteAnalyser
 {
-    public function getHttpError($url)
+    static public function getHttpError(Site $site)
     {
-        $response = Http::get($url);
+        $response = Http::get($site->getUrl);
+        event(new SiteHttpCodeChecked($site, $response->status()));
         return $response->status();
     }
 }
