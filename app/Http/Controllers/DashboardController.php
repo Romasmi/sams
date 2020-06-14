@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Site;
 
 class DashboardController extends Controller
 {
@@ -23,6 +24,20 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $sites = Site::all()->sortByDesc('id');
+
+        return view('dashboard.main',
+            [
+                'title' => 'Список сайтов',
+                'sites' => $sites
+            ]);
+    }
+
+    public function addSite()
+    {
+        return view('dashboard.site.add',
+            [
+                'title' => 'Добавить сайт'
+            ]);
     }
 }

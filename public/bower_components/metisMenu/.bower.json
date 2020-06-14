@@ -1,0 +1,15 @@
+{
+  "name": "metisMenu",
+  "homepage": "https://github.com/onokumus/metisMenu",
+  "version": "3.0.6",
+  "_release": "3.0.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.6",
+    "commit": "555109729f275ec46aa0b085ff53763ab682d64d"
+  },
+  "_source": "https://github.com/onokumus/metisMenu.git",
+  "_target": "^3.0.6",
+  "_originalSource": "metisMenu",
+  "_direct": true
+}

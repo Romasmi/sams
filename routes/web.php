@@ -20,3 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+Route::get('/site/add', 'SiteController@addSite')->name('addSite');
+Route::post('/site/add', 'SiteController@create')->name('create');
