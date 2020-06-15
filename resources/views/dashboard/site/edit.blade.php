@@ -55,8 +55,17 @@
         </div>
       </div>
     </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-default">Сохранить</button>
+    </div>
+    <h2>Страницы сайта для исследования</h2>
+    <p>Вставьте адреса страниц, каждый с новой строки. Желательно вставлять только страницы с уникальным дизайном или особенностями интерфейса.</p>
+    <div class="form-group">
+      <textarea class="form-control" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-default">Добавить страницы</button>
+    </div>
 
-    <p class="server-response" style="display: none;"></p>
-    <button type="submit" class="btn btn-default">Сохранить</button>
   </form>
 @endsection

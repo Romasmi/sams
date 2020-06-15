@@ -12781,3 +12781,24 @@ body {
   color: #0791e6;
 }
 
+.table {
+  margin-bottom: 10px;
+}
+
+.table .option-date {
+  font-size: 11px;
+}
+
+.table tr {
+  transition: 0.3s;
+}
+
+.table tr:hover {
+  background-color: #eee;
+  color: #333;
+}
+
+.jGrowl-notification {
+  background-color: #f33155;
+}
+

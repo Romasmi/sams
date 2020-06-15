@@ -2,3 +2,27 @@
 @import "dashboard/dashboard";
 @import "dashboard/colors";
 
+
+.table {
+   margin-bottom: 10px;
+
+   .option-date {
+     font-size: 11px;
+   }
+
+   tr
+   {
+     transition: .3s;
+
+     &:hover
+     {
+       background-color: #eee;
+       color: #333;
+     }
+   }
+ }
+
+.jGrowl-notification
+{
+  background-color: #f33155;
+}

@@ -20,4 +20,9 @@ class Site extends Model
     {
         return $this->hasMany('App\SiteJobPeriod');
     }
+
+    public function lastHttpCode()
+    {
+        return $this->hasMany('App\SiteHttpCode')->latest()->first();
+    }
 }

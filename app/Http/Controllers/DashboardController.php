@@ -28,11 +28,11 @@ class DashboardController extends Controller
     {
         $sites = Site::all()->sortByDesc('id');
 
-        foreach ($sites as $site)
+/*        foreach ($sites as $site)
         {
-            Jobs\CheckSiteGoogleScore::dispatch($site)->onConnection('database');
+            Jobs\CheckSiteGoogleScore::dispatch($site, '/', 'desktop')->onConnection('database');
             break;
-        }
+        }*/
 
         return view('dashboard.main',
         [

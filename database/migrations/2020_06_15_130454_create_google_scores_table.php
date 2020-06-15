@@ -20,7 +20,6 @@ class CreateGoogleScoresTable extends Migration
             $table->string('strategy');
             $table->string('page');
             $table->unsignedFloat('score')->nullable();
-            $table->json('data')->nullable();
         });
     }
 

@@ -19293,21 +19293,23 @@ $(function () {
 
     var _this = $(this);
 
-    var serverResponse = _this.find('.server-response');
-
     $.ajax({
       url: _this.attr('action'),
       type: _this.attr('method'),
       data: _this.serialize(),
       success: function success(data) {
-        serverResponse.html(data.status).fadeIn();
+        showAlert(data.status);
       },
       error: function error(data) {
-        serverResponse.html('Ошибка при сохранении.').fadeIn();
+        showAlert('Ошибка при сохранении');
       }
     });
   });
 });
+
+function showAlert(message) {
+  $.jGrowl(message);
+}
 
 /***/ }),
 

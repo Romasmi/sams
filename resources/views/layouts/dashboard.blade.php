@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="{{asset('bower_components/bootstrap/dist/css/bootstrap.css')}}"/>
   <link rel="stylesheet" href="{{ asset('bower_components/metisMenu/dist/metisMenu.min.css') }}"/>
   <link rel="stylesheet" href="{{ asset('bower_components/animate.css/animate.min.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('bower_components/jGrowl/jquery.jgrowl.min.css') }}"/>
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
 
@@ -65,6 +66,7 @@
 <script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('bower_components/metisMenu/dist/metisMenu.min.js') }}"></script>
 <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
+<script src="{{ asset('bower_components/jGrowl/jquery.jgrowl.min.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 
 </body>

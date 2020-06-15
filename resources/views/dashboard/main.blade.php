@@ -13,7 +13,7 @@
           <th>#</th>
           <th>Название</th>
           <th>Адрес</th>
-          <th></th>
+          <th class="text-center">Код ответа</th>
         </tr>
         </thead>
         <tbody>
@@ -27,6 +27,10 @@
                 <i class="fa fa-lock" aria-hidden="true"></i>
               @endif
               {{$site->domain}}
+            </td>
+            <td class="text-center">
+              {{$site->lastHttpCode()->http_code}}
+              <div class="option-date">({{$site->lastHttpCode()->updated_at->format('d.m.y H:i')}})</div>
             </td>
             <td>
               <a href="{{ route('editSite', ['id' => $site->id]) }}">

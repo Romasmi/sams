@@ -71,7 +71,7 @@ class SiteController extends Controller
      */
     protected function create(Request $request)
     {
-        $userId = Site::create([
+        $siteId = Site::create([
             'name' => $request->name,
             'domain' =>  $request->domain,
             'protocol' =>  $request->protocol
@@ -80,7 +80,7 @@ class SiteController extends Controller
         foreach ($request->jobPeriod as $key => $value )
         {
             SiteJobPeriod::create([
-                'site_id' => $userId,
+                'site_id' => $siteId,
                 'job' =>  $key,
                 'period' =>  $value
             ]);
@@ -103,10 +103,10 @@ class SiteController extends Controller
         $site->domain = $request->domain;
         $site->protocol = $request->protocol;
 
-/*        foreach ($request->jobPeriod as $key => $value )
+        foreach ($request->jobPeriod as $key => $value )
         {
             SiteJobPeriod::where(['site_id' => $site->id, 'job' => $key])->update(['period' => $value]);
-        }*/
+        }
 
         $site->save();
 
