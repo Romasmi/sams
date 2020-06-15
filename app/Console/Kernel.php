@@ -26,11 +26,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $sites = Site::all();
+/*        $sites = Site::all();
+
         foreach ($sites as $site)
         {
             $schedule->job(new Jobs\CheckSiteHttpCode($site), 'default', 'database')->everyMinute();
-        }
+        }*/
     }
 
     /**

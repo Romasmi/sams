@@ -54,12 +54,12 @@ class SiteController extends Controller
         {
             $jobPeriods[$period->job] = $period->period;
         }
+        $site->jobPeriods = $jobPeriods;
 
         return view('dashboard.site.edit',
             [
                 'title' => 'Редактировать сайт',
-                'site' => $site,
-                'jobPeriods' => $jobPeriods
+                'site' => $site
             ]);
     }
 
@@ -103,10 +103,10 @@ class SiteController extends Controller
         $site->domain = $request->domain;
         $site->protocol = $request->protocol;
 
-        foreach ($request->jobPeriod as $key => $value )
+/*        foreach ($request->jobPeriod as $key => $value )
         {
             SiteJobPeriod::where(['site_id' => $site->id, 'job' => $key])->update(['period' => $value]);
-        }
+        }*/
 
         $site->save();
 

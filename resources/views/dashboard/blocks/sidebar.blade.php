@@ -19,6 +19,10 @@
         <a href="dashboard.html" class="waves-effect"><i class="fa fa-clock-o fa-fw"
                                                          aria-hidden="true"></i>Уведомления</a>
       </li>
+      <li>
+        <a href="dashboard.html" class="waves-effect"><i class="fa fa-magic fa-fw"
+                                                         aria-hidden="true"></i>Автоматизация</a>
+      </li>
 {{--
       <li>
         <a href="profile.html" class="waves-effect"><i class="fa fa-user fa-fw"

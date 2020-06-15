@@ -39,10 +39,12 @@
           <h1 class="page-title h4">{{$title}}</h1>
         </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+{{--
           <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
              class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">
             Beauty button
           </a>
+--}}
           <ol class="breadcrumb">
             <li><a href="#">Панель управления</a></li>
             <li class="active">{{$title}}</li>

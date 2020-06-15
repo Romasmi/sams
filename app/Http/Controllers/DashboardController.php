@@ -30,7 +30,8 @@ class DashboardController extends Controller
 
         foreach ($sites as $site)
         {
-            //Jobs\CheckSiteHttpCode::dispatch($site)->onConnection('database');
+            Jobs\CheckSiteGoogleScore::dispatch($site)->onConnection('database');
+            break;
         }
 
         return view('dashboard.main',

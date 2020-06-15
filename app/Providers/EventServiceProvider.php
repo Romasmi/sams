@@ -21,6 +21,12 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SiteHttpCodeChecked' => [
             'App\Listeners\SaveSiteHttpCode',
         ],
+        'App\Events\GoogleScoreChecking' => [
+            'App\Listeners\OnCheckingGoogleScore',
+        ],
+        'App\Events\GoogleScoreChecked' => [
+            'App\Listeners\SaveGoogleScore',
+        ],
     ];
 
     /**

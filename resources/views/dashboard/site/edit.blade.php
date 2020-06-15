@@ -33,7 +33,7 @@
             @foreach(App\SiteJobPeriod::periods as $period)
               <option
                       value="{{$period['value']}}"
-                      @if ($jobPeriods['checkHttpCode'] == $period['value']) selected @endif>
+                      @if ($site->jobPeriods['checkHttpCode'] == $period['value']) selected @endif>
                 {{$period['name']}}
               </option>
             @endforeach
@@ -47,7 +47,7 @@
             @foreach(App\SiteJobPeriod::periods as $period)
               <option
                       value="{{$period['value']}}"
-                      @if ($jobPeriods['checkScoring'] == $period['value']) selected @endif>
+                      @if ($site->jobPeriods['checkScoring'] == $period['value']) selected @endif>
                 {{$period['name']}}
               </option>
             @endforeach
