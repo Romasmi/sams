@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use App\Site;
+use App\Model\Site;
 use App\Jobs;
 use App\Services;
 

@@ -6,8 +6,8 @@ use App\Events\GoogleScoreChecked;
 use App\Events\GoogleScoreChecking;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use App\Site;
-use App\GoogleScore;
+use App\Model\Site;
+use App\Model\GoogleScore;
 
 class OnCheckingGoogleScore
 {

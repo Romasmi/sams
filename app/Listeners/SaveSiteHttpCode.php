@@ -5,8 +5,8 @@ namespace App\Listeners;
 use App\Events\SiteHttpCodeChecked;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use App\Site;
-use App\SiteHttpCode;
+use App\Model\Site;
+use App\Model\SiteHttpCode;
 
 class SaveSiteHttpCode
 {

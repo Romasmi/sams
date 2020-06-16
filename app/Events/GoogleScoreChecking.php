@@ -3,8 +3,8 @@
 namespace App\Events;
 
 use Illuminate\Queue\SerializesModels;
-use App\GoogleScore;
-use App\Site;
+use App\Model\GoogleScore;
+use App\Model\Site;
 
 class GoogleScoreChecking
 {

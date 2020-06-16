@@ -37,7 +37,7 @@
                 <i class="fa fa-edit fa-fw" aria-hidden="true"></i>
               </a>
               <a href="{{ route('editSite', ['id' => $site->id]) }}">
-                <i class="fa fa-archive fa-fw" aria-hidden="true"></i>
+                <i class="fa fa-trash fa-fw" aria-hidden="true"></i>
               </a>
             </td>
           </tr>

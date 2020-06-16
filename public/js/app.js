@@ -19305,6 +19305,10 @@ $(function () {
       }
     });
   });
+  var pageRowSelector = $('.page-row');
+  $(pageRowSelector).on('click', '.delete-button', function () {
+    $(this).closest(pageRowSelector).hide();
+  });
 });
 
 function showAlert(message) {

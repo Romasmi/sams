@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-use App\SiteJobPeriod;
+use App\Model\SiteJobPeriod;
 
 class Site extends Model
 {
@@ -18,11 +18,16 @@ class Site extends Model
 
     public function jobPeriods()
     {
-        return $this->hasMany('App\SiteJobPeriod');
+        return $this->hasMany('App\Model\SiteJobPeriod');
     }
 
     public function lastHttpCode()
     {
-        return $this->hasMany('App\SiteHttpCode')->latest()->first();
+        return $this->hasMany('App\Model\SiteHttpCode')->latest()->first();
+    }
+
+    public function pages()
+    {
+        return $this->hasMany('App\Model\Page');
     }
 }

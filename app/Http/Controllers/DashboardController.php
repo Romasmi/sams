@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Site;
+use App\Model\Site;
 use App\Services\SiteAnalyser;
 use App\Jobs;
 

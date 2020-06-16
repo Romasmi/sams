@@ -2,9 +2,9 @@
 
 namespace App\Events;
 
-use App\GoogleScore;
+use App\Model\GoogleScore;
 use Illuminate\Queue\SerializesModels;
-use App\Site;
+use App\Model\Site;
 
 class GoogleScoreChecked
 {

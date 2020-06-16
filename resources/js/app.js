@@ -18,10 +18,14 @@ $(function () {
             }
         });
     });
+
+    const pageRowSelector = $('.page-row');
+    $(pageRowSelector).on('click', '.delete-button', function () {
+        $(this).closest(pageRowSelector).hide();
+    });
 });
 
-function showAlert(message)
-{
+function showAlert(message) {
     $.jGrowl(message);
 }
 

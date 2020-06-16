@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Services;
-use App\GoogleScore;
+use App\Model\GoogleScore;
 use Illuminate\Support\Facades\Http;
 use App\Events\SiteHttpCodeChecked;
 use App\Events\GoogleScoreChecked;
 use App\Events\GoogleScoreChecking;
-use App\Site;
+use App\Model\Site;
 use Illuminate\Support\Facades\Log;
 
 class SiteAnalyser

@@ -8,7 +8,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Services\SiteAnalyser;
-use App\Site;
+use App\Model\Site;
 use Illuminate\Support\Facades\Log;
 
 class CheckSiteGoogleScore implements ShouldQueue

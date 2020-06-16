@@ -3,7 +3,7 @@
 namespace App\Events;
 
 use Illuminate\Queue\SerializesModels;
-use App\Site;
+use App\Model\Site;
 
 class SiteHttpCodeChecked
 {

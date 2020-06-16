@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Site;
-use App\SiteJobPeriod;
+use App\Model\Site;
+use App\Model\SiteJobPeriod;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -48,7 +48,6 @@ class SiteController extends Controller
     public function editSite($id)
     {
         $site = Site::find($id);
-        //$site->jobPeroids = SiteJobPeriod::where('site_id', $site->id);
         $jobPeriods = [];
         foreach ($site->jobPeriods as $period)
         {
@@ -67,7 +66,7 @@ class SiteController extends Controller
      * Add a new site instance.
      *
      * @param  array  $data
-     * @return \App\Site
+     * @return \App\Model\Site
      */
     protected function create(Request $request)
     {
@@ -93,7 +92,7 @@ class SiteController extends Controller
      * Edit site instance.
      *
      * @param  array  $data
-     * @return \App\Site
+     * @return \App\Model\Site
      */
     protected function update(Request $request, $id)
     {
