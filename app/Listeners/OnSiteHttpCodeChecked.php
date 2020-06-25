@@ -9,7 +9,7 @@ use App\Model\Site;
 use App\Model\SiteHttpCode;
 use App\Services;
 
-class SaveSiteHttpCode
+class OnSiteHttpCodeChecked
 {
     /**
      * Create the event listener.
@@ -48,3 +48,5 @@ class SaveSiteHttpCode
         }
     }
 }
+
+

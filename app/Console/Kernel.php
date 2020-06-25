@@ -18,6 +18,11 @@ class Kernel extends ConsoleKernel
     protected $commands = [
     ];
 
+    private const JOB_COMPARATOR = [
+        'checkHttpCode' => 'CheckSiteHttpCode',
+        'checkScoring' => 'CheckSiteGoogleScore',
+    ];
+
     /**
      * Define the application's command schedule.
      *
@@ -30,7 +35,34 @@ class Kernel extends ConsoleKernel
 
         foreach ($sites as $site)
         {
-            $schedule->job(new Jobs\CheckSiteHttpCode($site), 'default', 'database')->everyMinute();
+            foreach ($site->hasMany('App\Model\SiteJobPeriod') as $jobPeriod)
+            {
+                $jobClass = 'Jobs\\' . self::JOB_COMPARATOR[$jobPeriod->job];
+
+                switch ($jobPeriod->period)
+                {
+                    case ('hour'):
+                    {
+                        $schedule->job(new $$jobClass($site), 'default', 'database')->hourly();
+                        break;
+                    }
+                    case ('day'):
+                    {
+                        $schedule->job(new $$jobClass($site), 'default', 'database')->daily();
+                        break;
+                    }
+                    case ('week'):
+                    {
+                        $schedule->job(new $$jobClass($site), 'default', 'database')->weekly();
+                        break;
+                    }
+                    case ('month'):
+                    {
+                        $schedule->job(new $$jobClass($site), 'default', 'database')->monthly();
+                        break;
+                    }
+                }
+            }
         }
     }
 

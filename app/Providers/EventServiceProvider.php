@@ -19,13 +19,13 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         'App\Events\SiteHttpCodeChecked' => [
-            'App\Listeners\SaveSiteHttpCode',
+            'App\Listeners\OnSiteHttpCodeChecked',
         ],
         'App\Events\GoogleScoreChecking' => [
             'App\Listeners\OnCheckingGoogleScore',
         ],
         'App\Events\GoogleScoreChecked' => [
-            'App\Listeners\SaveGoogleScore',
+            'App\Listeners\OnGoogleScoreChecked',
         ],
         'App\Events\MetricsFullUpdateStarting' => [
             'App\Listeners\OnMetricsFullUpdateStarting',
