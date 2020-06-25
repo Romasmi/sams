@@ -2,28 +2,51 @@
 @import "dashboard/dashboard";
 @import "dashboard/colors";
 
-
 .table {
-   margin-bottom: 10px;
+    margin-bottom: 10px;
 
-   .option-date {
-     font-size: 11px;
-   }
+    .option-date {
+        font-size: 11px;
+    }
 
-   tr
-   {
-     transition: .3s;
+    tr {
+        transition: .3s;
 
-     &:hover
-     {
-       background-color: #eee;
-       color: #333;
-     }
-   }
- }
-
-.jGrowl-notification
-{
-  background-color: #00a000;
+        &:hover {
+            background-color: #eee;
+            color: #333;
+        }
+    }
 }
 
+.jGrowl-notification {
+    background-color: #00a000;
+}
+
+.options-list {
+    .value {
+        font-weight: 500;
+    }
+}
+
+.loading
+{
+    animation-name: rotation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotation {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+
+.d-inline-block
+{
+    display: inline-block;
+}

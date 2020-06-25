@@ -27,6 +27,12 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\GoogleScoreChecked' => [
             'App\Listeners\SaveGoogleScore',
         ],
+        'App\Events\MetricsFullUpdateStarting' => [
+            'App\Listeners\OnMetricsFullUpdateStarting',
+        ],
+        'App\Events\MetricsFullUpdateFinished' => [
+            'App\Listeners\OnMetricsFullUpdateFinished',
+        ],
     ];
 
     /**

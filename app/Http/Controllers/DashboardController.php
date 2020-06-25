@@ -31,10 +31,11 @@ class DashboardController extends Controller
 /*        foreach ($sites as $site)
         {
             Jobs\CheckSiteGoogleScore::dispatch($site, '/', 'desktop')->onConnection('database');
-            break;
+            Jobs\CheckSiteGoogleScore::dispatch($site, '/', 'mobile')->onConnection('database');
         }*/
 
-        return view('dashboard.main',
+
+        return view('dashboard.index',
         [
                 'title' => 'Список сайтов',
                 'sites' => $sites
@@ -49,3 +50,6 @@ class DashboardController extends Controller
             ]);
     }
 }
+
+
+

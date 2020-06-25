@@ -41,7 +41,7 @@ class SaveGoogleScore
         $row->score = $event->googleScore->score;
         $row->save();
 
-        $filename = "google_pi/{$row->id}.txt";
+        $filename = "google_pi/{$row->id}.json";
         Storage::disk('local')->put($filename, $event->googleScore->data);
     }
 }

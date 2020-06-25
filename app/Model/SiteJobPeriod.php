@@ -33,4 +33,20 @@ class SiteJobPeriod extends Model
         ],
     ];
 
+    public const jobName = [
+        'checkHttpCode' => 'Проверка кодов ответа',
+        'checkScoring' => 'Проверка рейтинга производительности'
+    ];
+
+    public static function getPeriodName($value)
+    {
+        foreach (self::periods as $period)
+        {
+            if ($period['value'] == $value)
+            {
+                return $period['name'];
+            }
+        }
+    }
+
 }

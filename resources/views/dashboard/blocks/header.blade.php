@@ -2,20 +2,14 @@
   <nav class="navbar navbar-default navbar-static-top m-b-0">
     <div class="navbar-header">
       <div class="top-left-part">
-        <!-- Logo -->
         <a class="logo" href="{{route('dashboard')}}">
-          <!-- Logo icon image, you can use font-icon also --><b>
-            <!--This is dark logo icon--><img src="/image/admin-logo.png" alt="home"
-                                              class="dark-logo"/>
-            <!--This is light logo icon--><img src="/image/admin-logo-dark.png" alt="home"
-                                               class="light-logo"/>
+          <b>
+          <img src="/image/sams_logo.png" alt="SAMS"/>
           </b>
-          <!-- Logo text image you can use text also --><span class="hidden-xs">
-                            <!--This is dark logo text--><img src="/image/admin-text.png" alt="home"
-                                                              class="dark-logo"/>
-            <!--This is light logo text--><img src="/image/admin-text-dark.png" alt="home"
-                                               class="light-logo"/>
-                        </span> </a>
+          <span class="hidden-xs">
+            <img src="/image/sams_text.png" alt="SAMS" />
+          </span>
+        </a>
       </div>
       <!-- /Logo -->
       <ul class="nav navbar-top-links navbar-right pull-right">
@@ -29,9 +23,10 @@
                       class="fa fa-search"></i></a></form>
         </li>
         <li>
-          <a class="profile-pic" href="#"> <img src="/image/users/varun.jpg" alt="user-img"
-                                                width="36" class="img-circle"><b
-                    class="hidden-xs">{{ Auth::user()->name }}</b></a>
+          <a class="profile-pic" href="#">
+            <b class="hidden-xs">{{ Auth::user()->name }}</b>
+            <span class="fa fa-angle-down"></span>
+          </a>
         </li>
       </ul>
     </div>

@@ -57,13 +57,13 @@
         </div>
       </div>
     </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-default">Сохранить</button>
+    </div>
   </form>
 
   <form class="ajax-form" method="POST" action="{{ route('addPages', ['id' => $site->id]) }}">
     @csrf
-    <div class="form-group">
-      <button type="submit" class="btn btn-default">Сохранить</button>
-    </div>
     <h2>Добавить страницы сайта для мониторинга</h2>
     <p>
       Вставьте адреса страниц, каждый с новой строки. Желательно вставлять только страницы с уникальным дизайном или
@@ -90,7 +90,7 @@
         </thead>
         <tbody>
         @foreach ($site->pages as $page)
-          <tr class="page-row">
+          <tr class="table-row">
             <td>{{$page->id}}</td>
             <td>{{$site->domain}}{{$page->link}}</td>
             <td>

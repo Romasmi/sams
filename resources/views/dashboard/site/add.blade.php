@@ -32,7 +32,7 @@
           <label for="checkHttpCode">Проверка кодов ответа</label>
           <select class="form-control" id="checkHttpCode" name="jobPeriod[checkHttpCode]">
             @foreach(App\Model\SiteJobPeriod::periods as $period)
-              <option value="{{$period['value']}}">{{$period['name']}}</option>
+              <option value="{{$period['value']}}" @if ($period['value']=='hour') selected @endif>{{$period['name']}}</option>
             @endforeach
           </select>
         </div>
@@ -42,7 +42,7 @@
           <label for="checkScoring">Проверка рейтинга производительности</label>
           <select class="form-control" id="checkScoring" name="jobPeriod[checkScoring]">
             @foreach(App\Model\SiteJobPeriod::periods as $period)
-              <option value="{{$period['value']}}">{{$period['name']}}</option>
+              <option value="{{$period['value']}}" @if ($period['value']=='month') selected @endif>{{$period['name']}}</option>
             @endforeach
           </select>
         </div>

@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>SAMS</title>
 
+        <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.png">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -77,11 +78,12 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <h1 class="title m-b-md">
                     SAMS
-                </div>
-                <div class="h3">Site Analysing and Monitoring system</div>
+                </h1>
+                <h2>Site Analysing and Monitoring system</h2>
 
+{{--
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
@@ -92,6 +94,7 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+--}}
             </div>
         </div>
     </body>

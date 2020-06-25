@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="{{ asset('bower_components/metisMenu/dist/metisMenu.min.css') }}"/>
   <link rel="stylesheet" href="{{ asset('bower_components/animate.css/animate.min.css') }}"/>
   <link rel="stylesheet" href="{{ asset('bower_components/jGrowl/jquery.jgrowl.min.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('bower_components/chartist-js/dist/chartist.min.css') }}" >
+  <link rel="stylesheet" href="{{ asset('bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css') }}">
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet"/>
 
@@ -43,7 +45,7 @@
 {{--
           <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
              class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">
-            Beauty button
+             Some button
           </a>
 --}}
           <ol class="breadcrumb">
@@ -68,6 +70,8 @@
 <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
 <script src="{{ asset('bower_components/jGrowl/jquery.jgrowl.min.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
+
+@yield('scripts')
 
 </body>
 </html>

@@ -35,8 +35,6 @@ class CheckSiteHttpCode implements ShouldQueue
      */
     public function handle()
     {
-        Log::info('Hello');
-
         SiteAnalyser::getHttpError($this->site);
     }
 }

@@ -19293,6 +19293,8 @@ $(function () {
 
     var _this = $(this);
 
+    _this.find('button[type=submit]').attr('disabled', 'true');
+
     $.ajax({
       url: _this.attr('action'),
       type: _this.attr('method'),
@@ -19305,9 +19307,13 @@ $(function () {
       }
     });
   });
-  var pageRowSelector = $('.page-row');
+  var pageRowSelector = $('.table-row');
   $(pageRowSelector).on('click', '.delete-button', function () {
     $(this).closest(pageRowSelector).hide();
+  });
+  $('.update-button').on('click', function () {
+    $(this).find('.fa').addClass('fa-spinner');
+    $(this).addClass('loading');
   });
 });
 

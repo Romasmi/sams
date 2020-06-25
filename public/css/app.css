@@ -6358,7 +6358,7 @@ ul.wallet-list li a:hover {
 #ct-main-bal,
 #ct-polar-chart,
 #ct-sales,
-#ct-visits,
+.google-score-chart,
 #ct-weather {
   position: relative;
 }
@@ -6433,27 +6433,27 @@ ul.wallet-list li a:hover {
   fill-opacity: 0.2;
 }
 
-#ct-visits .ct-series-a .ct-line,
-#ct-visits .ct-series-a .ct-point {
+.google-score-chart .ct-series-a .ct-line,
+.google-score-chart .ct-series-a .ct-point {
   stroke: #98a6ad;
 }
 
-#ct-visits .ct-series-b .ct-line,
-#ct-visits .ct-series-b .ct-point {
+.google-score-chart .ct-series-b .ct-line,
+.google-score-chart .ct-series-b .ct-point {
   stroke: #41b3f9;
 }
 
-#ct-visits .ct-series-a .ct-area {
+.google-score-chart .ct-series-a .ct-area {
   fill: #98a6ad;
   fill-opacity: 0.05;
 }
 
-#ct-visits .ct-series-b .ct-area {
+.google-score-chart .ct-series-b .ct-area {
   fill: #41b3f9;
   fill-opacity: 0.1;
 }
 
-#ct-visits .ct-line {
+.google-score-chart .ct-line {
   stroke-width: 2px;
 }
 
@@ -12800,5 +12800,44 @@ body {
 
 .jGrowl-notification {
   background-color: #00a000;
+}
+
+.options-list .value {
+  font-weight: 500;
+}
+
+.loading {
+  -webkit-animation-name: rotation;
+          animation-name: rotation;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.d-inline-block {
+  display: inline-block;
 }
 

@@ -26,7 +26,11 @@ Route::post('/site/add', 'SiteController@create')->name('createSite');
 
 Route::get('/site/edit/{id}', 'SiteController@editSite')->name('editSite');
 Route::post('/site/edit/{id}', 'SiteController@update')->name('updateSite');
-Route::get('/site/{id}', 'SiteController@index')->name('editSite');
+Route::post('/site/metrics-full-update', 'SiteController@metricsFullUpdate')->name('metricsFullUpdate');
+Route::get('/site/{id}', 'SiteController@index')->name('showSite');
 
 Route::post('/site/page/add/{id}', 'PageController@addPages')->name('addPages');
 Route::post('/site/pages/delete/{id}', 'PageController@deletePage')->name('deletePage');
+
+Route::get('/user',  'UserController@edit')->name('editUser');
+Route::patch('/user',  'UserController@update')->name('updateUser');
