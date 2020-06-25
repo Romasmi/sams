@@ -71,7 +71,7 @@ class SaveGoogleScore
             Страница {$metrica->page}
             Тип: {$metrica->strategy}
             Значение: {$normalizedScore} / 100
-            {$recommendation}
+            <b>{$recommendation}</b>
         ";
 
         Log::info($message);
