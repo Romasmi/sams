@@ -29,7 +29,7 @@ class NotificationSender
 
     static function notifyByTelegram($text)
     {
-        $response = Http::post('https://api.telegram.org/bot' . self::telegramToken . '/sendMessage', [
+        Http::post('https://api.telegram.org/bot' . self::telegramToken . '/sendMessage', [
             'chat_id' => self::telegramChatId,
             'text' => $text,
             'parse_mode' => 'html'

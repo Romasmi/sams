@@ -44,7 +44,7 @@ class SaveSiteHttpCode
         ";
 
             //Services\NotificationSender::notifyByEmail($message, "SAMS - httpCode {$site->domain}");
-            Services\NotificationSender::notifyByTelegram($message, "SAMS - httpCode {$site->domain}");
+            Services\NotificationSender::notifyByTelegram($message);
         }
     }
 }

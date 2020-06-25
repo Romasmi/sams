@@ -147,12 +147,12 @@ class SiteController extends Controller
         event(new MetricsFullUpdateStarting($site));
 
         Jobs\CheckSiteHttpCode::dispatch($site)->onConnection('database');
-        Jobs\CheckSiteGoogleScore::dispatch($site, '/', 'desktop')->onConnection('database');
+/*        Jobs\CheckSiteGoogleScore::dispatch($site, '/', 'desktop')->onConnection('database');
         Jobs\CheckSiteGoogleScore::dispatch($site, '/', 'mobile')->onConnection('database');
         foreach ($site->pages as $page) {
             Jobs\CheckSiteGoogleScore::dispatch($site, $page->link, 'desktop')->onConnection('database');
             Jobs\CheckSiteGoogleScore::dispatch($site, $page->link, 'mobile')->onConnection('database');
-        }
+        }*/
         dispatch(function () use ($site) {
             event(new MetricsFullUpdateFinished($site));
         })->onConnection('database');
