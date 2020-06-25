@@ -34,17 +34,17 @@ class SaveSiteHttpCode
             'site_id' =>  $event->site->id,
         ]);
 
-        $site = Site::find($event->site->id);
-        $message = "
-          <h1>Информация</h1>
-          <ul>
-            <li>Сайт: {$site->domain}</li>
-            <li>Код ответа: {$metrica->http_code}</li>
-            <li>Дата определения: {$metrica->updated_at}</li>
-          </ul>
+        if ($metrica->http_code != 200)
+        {
+            $site = Site::find($event->site->id);
+            $message = "
+            <b>Сайт: {$site->domain}</b>
+            Код ответа: {$metrica->http_code}
+            Дата определения: {$metrica->updated_at}
         ";
 
-        //Services\NotificationSender::notifyByEmail($message, "SAMS - httpCode {$site->domain}");
-        Services\NotificationSender::notifyByTelegram($message, "SAMS - httpCode {$site->domain}");
+            //Services\NotificationSender::notifyByEmail($message, "SAMS - httpCode {$site->domain}");
+            Services\NotificationSender::notifyByTelegram($message, "SAMS - httpCode {$site->domain}");
+        }
     }
 }

@@ -13,6 +13,8 @@ use App\Model\User;
 
 class NotificationSender
 {
+    private const telegramToken = '1129706097:AAGmMvWpz_iMsXEVO7lrU86msciZ4dZ2OiI';
+    private const telegramChatId = '234499992';
 
     static function notifyByEmail($text, $title)
     {
@@ -25,8 +27,12 @@ class NotificationSender
         });
     }
 
-    static function notifyByTelegram($text, $title)
+    static function notifyByTelegram($text)
     {
-
+        $response = Http::post('https://api.telegram.org/bot' . self::telegramToken . '/sendMessage', [
+            'chat_id' => self::telegramChatId,
+            'text' => $text,
+            'parse_mode' => 'html'
+        ]);
     }
 }
