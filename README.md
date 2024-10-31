@@ -1,2 +1,4 @@
 <h1>SAMS - site analysis managment system</h1>
-<p>That's our company internal project</p>
+<h2>Features</h2>
+<h3>Google PagesSpeed Insight score tracking</h3>
+Tracking GPSI score by scheduler, settings alerts and getting notification in Telegram bot.
